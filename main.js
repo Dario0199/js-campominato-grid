@@ -32,4 +32,40 @@ selbtn.addEventListener('click', () => {
     }
     console.log(squareNumber);
     console.log(squareForSide);
+
+    //generazione della griglia
+    const grid = document.createElement('div');
+    grid.classList.add('grid');
+    
+    const genNum = [];
+
+    for(let i = 0; i < squareNumber; i++){ 
+        
+        const square = genGridSquareForSide(i + 1, squareForSide)
+        grid.append(square)
+
+        square.addEventListener('click', function(){
+            square.classList.add('click-bg');
+        });
+    }
+    contGrid.append(grid);
+    // genera numeri
+
+   
 });
+
+// function genNumberSquare(min, max);
+
+function genGridSquareForSide(num, square){
+    const node = document.createElement('div');
+    node.classList.add('square');
+    node.style.width = `calc(100% / ${square})`;
+    node.style.height = `calc(100% / ${square})`;
+
+    const span = document.createElement('span');
+    span.append(num);
+
+    node.append(span);
+
+    return node;
+}

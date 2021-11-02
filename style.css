@@ -67,6 +67,10 @@ header .right{
     cursor: pointers;
 }
 
+.click-bg{
+    background: blue;
+}
+
 /* footer */
 footer{
     width: 100%;
